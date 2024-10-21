@@ -5,6 +5,9 @@ class jsonWork :
         self.fichier = file
     
     def getContenuJSON(self):
+        """
+        :return : contenu du fichier json complet
+        """
         with open(self.fichier, 'r' , encoding='utf-8') as openfile:
             dict = json.load(openfile)
         return dict
