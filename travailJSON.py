@@ -61,7 +61,7 @@ class jsonWork :
             with open(self.fichier, 'w', encoding='utf-8') as fichier_modifie:
                 json.dump(data, fichier_modifie, indent=2)
     
-    def supprJSONList(self, flag, cle):
+    def supprJSONDict(self, flag, cle):
         with open(self.fichier, 'r', encoding='utf-8') as fichier_json:
             data = json.load(fichier_json)
 
@@ -89,11 +89,6 @@ class jsonWork :
                 liste.remove(valeur)  # Supprime la valeur spécifiée de la liste
                 with open(self.fichier, 'w', encoding='utf-8') as fichier_modifie:
                     json.dump(data, fichier_modifie, indent=2)
-
-    def dictJson(self):
-        with open(self.fichier, 'r' , encoding='utf-8') as openfile:
-            dict = json.load(openfile)
-        return dict
        
     def compteurFlagJSON(self):
         openfile = open(self.fichier, 'r' , encoding='utf-8')
